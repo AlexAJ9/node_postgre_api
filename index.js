@@ -15,10 +15,6 @@ app.post('/data',db.postData)
 app.put('/data/:id',db.updateData)
 app.delete('/data/:id',db.deleteData)
 
-app.get('/', (req, res) => {
-    res.json({ msg: 'hey' })
-})
-
 app.listen(port, () => {
     console.log(`runnin on port ${port}`)
 })
