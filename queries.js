@@ -7,7 +7,7 @@ const pool = new Pool({
     host: process.env.HOST,
     port: process.env.PORT
 })
-const queries = [
+const select_queries = [
     'SELECT * FROM cd.facilities ORDER by facid ASC',
     'SELECT (name),(membercost) FROM cd.facilities',
     'SELECT * From cd.facilities WHERE membercost>0',
@@ -23,7 +23,7 @@ const queries = [
 ]
 
 const getData = (req, res) => {
-    pool.query(queries[0], (err, data) => {
+    pool.query(select_queries[0], (err, data) => {
         if (err) throw err
         res.status(200).json(data.rows)
     })
